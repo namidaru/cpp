@@ -40,3 +40,35 @@ Tested Platform :
    Linux node 3.13.6-200.fc20.x86_64 #1 SMP Fri Mar 7 17:02:28 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
    [root@node c]# gcc --version | grep gcc
    gcc (GCC) 4.8.2 20131212 (Red Hat 4.8.2-7)
+
+Beginner workflow (for getting help from Codex)
+------------------------------------------------
+
+You can ask Codex to directly edit this project without manually pushing to GitHub first.
+
+Recommended prompt template:
+- Goal: what you want changed (bug fix, new feature, refactor)
+- Scope: files/folders to touch (or say "find it for me")
+- Done condition: how to verify (for example: `make` passes)
+
+Example:
+"Fix line-clear scoring in `Tetris_Game.cpp`, only change game logic, and make sure `make` succeeds."
+
+GitHub remote setup is optional for local edits. It is only needed when you want to sync your local history with GitHub (`git push` / `git pull`).
+
+Repository mismatch troubleshooting
+---------------------------------
+
+If you expected another project (for example `namidaru/cash-burner`) but Codex shows this Tetris codebase,
+that means the current workspace folder is a different repository.
+
+Quick checks:
+- `pwd` (or Windows: `cd`) to see your current folder
+- `git remote -v` to see which GitHub repository this folder is connected to
+
+To work on `namidaru/cash-burner` in a fresh folder:
+- `git clone https://github.com/namidaru/cash-burner.git`
+- `cd cash-burner`
+
+Then ask Codex to edit files in that repository path.
+
